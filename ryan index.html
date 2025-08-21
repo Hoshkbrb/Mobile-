@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Brito - Poeta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', serif;
+        }
+        
+        body {
+            background-color: #f9f7f1;
+            color: #333;
+            line-height: 1.8;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #6d5d7a;
+            color: #fff;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: """;
+            font-size: 15rem;
+            position: absolute;
+            top: -50px;
+            left: 50px;
+            opacity: 0.1;
+            color: #fff;
+            font-family: Georgia, serif;
+        }
+        
+        header::after {
+            content: """;
+            font-size: 15rem;
+            position: absolute;
+            bottom: -100px;
+            right: 50px;
+            opacity: 0.1;
+            color: #fff;
+            font-family: Georgia, serif;
+            transform: rotate(180deg);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #6d5d7a;
+            margin: 40px 0 20px;
+            text-align: center;
+            font-weight: normal;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #6d5d7a, transparent);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: #6d5d7a;
+            margin: 25px 0 15px;
+            font-weight: normal;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #d5cfe1;
+            font-size: 1.2rem;
+        }
+        
+        section {
+            margin: 50px 0;
+            padding: 40px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        section::before {
+            content: """;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: #6d5d7a;
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+        
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 250px;
+            height: 300px;
+            background-color: #f0e6f6;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6d5d7a;
+            font-size: 5rem;
+            padding: 20px;
+        }
+        
+        .poems {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .poem {
+            background: #f9f7f1;
+            padding: 25px;
+            border-radius: 5px;
+            border-left: 4px solid #6d5d7a;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+        
+        .poem:hover {
+            transform: translateY(-5px);
+        }
+        
+        .poem-title {
+            font-weight: bold;
+            color: #6d5d7a;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .poem-content {
+            font-style: italic;
+            line-height: 1.6;
+            color: #555;
+            border-left: 2px solid #d5cfe1;
+            padding-left: 15px;
+        }
+        
+        .styles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .style {
+            background: #6d5d7a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .contact a {
+            color: #6d5d7a;
+            text-decoration: none;
+            padding: 12px 25px;
+            border: 1px solid #6d5d7a;
+            border-radius: 4px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact a:hover {
+            background: #6d5d7a;
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px;
+            background: #6d5d7a;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            header::before, header::after {
+                display: none;
+            }
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            text-align: right;
+            margin-top: 30px;
+            color: #6d5d7a;
+        }
+        
+        /* Adicionando uma fonte cursiva para a assinatura */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Ryan Brito</h1>
+            <p class="tagline">Poeta & Contador de Histórias</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section id="about">
+            <h2>Sobre o Poeta</h2>
+            <div class="about">
+                <div class="about-text">
+                    <p>Ryan Brito é um poeta contemporâneo cuja obra transita entre o lírico e o narrativo, explorando as nuances do amor, da existência e dos pequenos milagres do cotidiano.</p>
+                    <p>Nascido em Belo Horizonte, formou-se em Letras e desde 2015 dedica-se integralmente à escrita. Sua poesia é caracterizada por uma linguagem acessível mas profundamente simbólica, capaz de tocar leitores de diversas idades e backgrounds.</p>
+                    <p>Já participou de mais de 30 saraus e eventos literários em todo o país, e seus poemas foram publicados em diversas antologias e revistas especializadas.</p>
+                    <div class="signature">Ryan Brito</div>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-feather-alt"></i>
+                </div>
+            </div>
+        </section>
+        
+        <section id="styles">
+            <h2>Estilos Poéticos</h2>
+            <div class="styles">
+                <span class="style">Poesia Lírica</span>
+                <span class="style">Haikai</span>
+                <span class="style">Soneto</span>
+                <span class="style">Poema em Prosa</span>
+                <span class="style">Poesia Visual</span>
+                <span class="style">Narrativa Poética</span>
+            </div>
+        </section>
+        
+        <section id="poems">
+            <h2>Poemas</h2>
+            <div class="poems">
+                <div class="poem">
+                    <div class="poem-title">O Silêncio entre Nós</div>
+                    <div class="poem-content">
+                        No espaço entre duas palavras,<br>
+                        habita todo um universo.<br>
+                        No intervalo entre dois olhares,<br>
+                        mora a verdade mais dispersa.<br>
+                        <br>
+                        Calo-me para ouvir teu silêncio,<br>
+                        e na pausa da canção,<br>
+                        encontro a melodia<br>
+                        que falta em meu coração.
+                    </div>
+                </div>
+                <div class="poem">
+                    <div class="poem-title">Café da Manhã</div>
+                    <div class="poem-content">
+                        A luz entra pela janela<br>
+                        e desenha losangos na toalha.<br>
+                        O pão esquenta na torradeira<br>
+                        enquanto o dia desenrola<br>
+                        sua teia de possibilidades.<br>
+                        <br>
+                        Em cada xícara, um destino,<br>
+                        em cada mordida, um caminho.
+                    </div>
+                </div>
+                <div class="poem">
+                    <div class="poem-title">Estações</div>
+                    <div class="poem-content">
+                        A primavera chega sem avisar,<br>
+                        vestida de flores e promessas.<br>
+                        O verão traz seus dias longos,<br>
+                        noites quentes e doces pressas.<br>
+                        <br>
+                        O outono chega para lembrar<br>
+                        que tudo cai, tudo passa.<br>
+                        E o inverno ensina que às vezes<br>
+                        é preciso guardar a graça.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contato</h2>
+            <p>Interessado em publicações, participação em eventos ou encomenda de poemas personalizados?</p>
+            <div class="contact">
+                <a href="mailto:ryan.brito@exemplo.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://instagram.com/ryan.brito.poesia" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="tel:+5511999999999"><i class="fas fa-phone"></i> Telefone</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Ryan Brito - Todos os versos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
