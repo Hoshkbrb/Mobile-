@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoPlanner - Tarefas</title>
+  <style>
+    :root {
+      --primary-color: #2e7d32; /* verde sustentável */
+      --secondary-color: #f1f8e9;
+      --text-color: #333;
+      --focus-color: #004d40;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+    }
+
+    .task-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .task {
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .task input[type="checkbox"] {
+      margin-right: 1rem;
+    }
+
+    .task button {
+      background: var(--primary-color);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .task button:hover {
+      background: #1b5e20;
+    }
+
+    .task button:focus {
+      outline: 3px solid var(--focus-color);
+    }
+
+    .add-task {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .add-task button {
+      background: var(--primary-color);
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-task button:hover {
+      background: #1b5e20;
+    }
+
+    .add-task button:focus {
+      outline: 3px solid var(--focus-color);
+    }
+
+    /* Responsividade */
+    @media (min-width: 600px) {
+      .task-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      .task-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">EcoPlanner - Suas Tarefas Sustentáveis</h1>
+  </header>
+
+  <main>
+    <section class="task-list" role="list" aria-labelledby="title">
+      <div class="task" role="listitem">
+        <label>
+          <input type="checkbox" aria-checked="false"> Separar lixo reciclável
+        </label>
+        <button aria-label="Editar tarefa Separar lixo reciclável" aria-expanded="false">Editar</button>
+      </div>
+      <div class="task" role="listitem">
+        <label>
+          <input type="checkbox" aria-checked="false"> Economizar energia hoje
+        </label>
+        <button aria-label="Editar tarefa Economizar energia hoje" aria-expanded="false">Editar</button>
+      </div>
+      <div class="task" role="listitem">
+        <label>
+          <input type="checkbox" aria-checked="false"> Usar garrafa reutilizável
+        </label>
+        <button aria-label="Editar tarefa Usar garrafa reutilizável" aria-expanded="false">Editar</button>
+      </div>
+    </section>
+
+    <div class="add-task">
+      <button aria-label="Adicionar nova tarefa">+ Adicionar Tarefa</button>
+    </div>
+  </main>
+
+  <script>
+    // Alternar aria-expanded ao clicar no botão Editar
+    const editButtons = document.querySelectorAll('.task button');
+
+    editButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !expanded);
+        button.textContent = expanded ? 'Editar' : 'Fechar';
+      });
+    });
+  </script>
+</body>
+</html>
